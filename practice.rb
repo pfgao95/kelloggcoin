@@ -27,3 +27,45 @@ blockchain = [
 # Anthony's KelloggCoin balance is 2650
 
 # 👇👇👇 Your code HERE 👇👇👇
+ben_coin = 0
+brian_coin = 0
+evan_coin = 0
+anthony_coin = 0
+
+
+index = 0
+
+loop do 
+
+if index == blockchain.length
+  break
+end
+
+if blockchain[index]["from_user"] == "ben"
+  ben_coin = ben_coin - blockchain[index]["amount"]
+elsif blockchain[index]["from_user"] == "brian"
+  brian_coin = brian_coin - blockchain[index]["amount"]
+elsif blockchain[index]["from_user"] == "evan"
+  evan_coin = evan_coin - blockchain[index]["amount"]
+elsif blockchain[index]["from_user"] == "anthony"
+  anthony_coin = anthony_coin - blockchain[index]["amount"]
+end
+
+if blockchain[index]["to_user"] == "ben"
+  ben_coin = ben_coin + blockchain[index]["amount"]
+elsif blockchain[index]["to_user"] == "brian"
+  brian_coin = brian_coin + blockchain[index]["amount"]
+elsif blockchain[index]["to_user"] == "evan"
+  evan_coin = evan_coin + blockchain[index]["amount"]
+elsif blockchain[index]["to_user"] == "anthony"
+  anthony_coin = anthony_coin + blockchain[index]["amount"]
+end
+
+index = index +1
+
+end
+
+puts "Ben's KelloggCoin balance is #{ben_coin}"
+puts "Brian's KelloggCoin balance is #{brian_coin}"
+puts "Evan's KelloggCoin balance is #{evan_coin}"
+puts "Anthony's KelloggCoin balance is #{anthony_coin}"
